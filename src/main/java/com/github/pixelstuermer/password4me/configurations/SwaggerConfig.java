@@ -1,5 +1,6 @@
 package com.github.pixelstuermer.password4me.configurations;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,6 +15,27 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
+   @Value( "${project.version}" )
+   private String projectVersion;
+
+   @Value( "${project.name}" )
+   private String projectName;
+
+   @Value( "${project.description}" )
+   private String projectDescription;
+
+   @Value( "${project.author}" )
+   private String projectAuthor;
+
+   @Value( "${project.author.url}" )
+   private String projectAuthorUrl;
+
+   @Value( "${project.license}" )
+   private String projectLicense;
+
+   @Value( "${project.license.url}" )
+   private String projectLicenseUrl;
+
    @Bean
    public Docket swaggerApi() {
       return new Docket( DocumentationType.SWAGGER_2 ).select()
@@ -25,10 +47,8 @@ public class SwaggerConfig {
 
    @SuppressWarnings( "deprecation" )
    private ApiInfo getSwaggerMetaData() {
-      ApiInfo apiInfo = new ApiInfo( "password4me", "Generates passwords according to user input parameters",
-         "1.0.0-SNAPSHOT", "https://raw.githubusercontent.com/pixelstuermer/password4me/master/LICENSE",
-         "https://github.com/pixelstuermer", "MIT License",
-         "https://raw.githubusercontent.com/pixelstuermer/password4me/master/LICENSE" );
+      ApiInfo apiInfo = new ApiInfo( projectName, projectDescription, projectVersion, projectLicenseUrl,
+         projectAuthorUrl, projectLicense, projectLicenseUrl );
       return apiInfo;
    }
 
