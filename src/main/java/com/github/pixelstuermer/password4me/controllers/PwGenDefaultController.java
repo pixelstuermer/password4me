@@ -18,7 +18,7 @@ import io.swagger.annotations.ApiOperation;
 @Api( "Controller to generate default passwords without parameters" )
 public class PwGenDefaultController {
 
-   @RequestMapping( method = RequestMethod.GET, value = "/" )
+   @RequestMapping( method = RequestMethod.GET, value = "/default" )
    @ApiOperation( value = "Returns 10 default passwords, each with 12 characters length" )
    public ResponseEntity<PasswordList> generateDefaultPw() {
       PasswordList passwordList = new PasswordList();
@@ -29,7 +29,7 @@ public class PwGenDefaultController {
       return ResponseEntity.status( 200 ).body( passwordList );
    }
 
-   @RequestMapping( method = RequestMethod.GET, value = "/{length}" )
+   @RequestMapping( method = RequestMethod.GET, value = "/default/{length}" )
    @ApiOperation( value = "Returns 10 default passwords, each with a user-defined length" )
    public ResponseEntity<PasswordList> generateDefaultPwWithLength(
       @PathVariable( value = "length", required = true ) int length ) {
