@@ -29,7 +29,7 @@ public class IndexController {
    public ResponseEntity<PasswordList> generatePwTwenty() {
       PasswordList passwordList = new PasswordList();
       for ( int i = 0; i < 10; i++ ) {
-         Password password = PasswordGenerator.generatePassword( 20 );
+         Password password = PasswordGenerator.generatePassword( 20, true, true, true, true );
          passwordList.getPasswords().add( password );
       }
       return ResponseEntity.status( 200 ).body( passwordList );
@@ -39,7 +39,7 @@ public class IndexController {
    @ApiOperation( value = "Returns a sample password with 50 characters" )
    public ResponseEntity<PasswordMap> generatePwTen() {
       PasswordMap passwordMap = new PasswordMap();
-      Password password = PasswordGenerator.generatePassword( 50 );
+      Password password = PasswordGenerator.generatePassword( 50, true, true, true, true );
       passwordMap.getPasswords().put( "password", password.getPassword() );
       passwordMap.getPasswords().put( "length", password.getLength() );
       return ResponseEntity.status( 200 ).body( passwordMap );
