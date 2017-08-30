@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiOperation;
 public class PwGenDefaultController {
 
    @RequestMapping( method = RequestMethod.GET, value = "/" )
-   @ApiOperation( value = "Returns 10 default passwords, each with with 12 characters length" )
+   @ApiOperation( value = "Returns 10 default passwords, each with 12 characters length" )
    public ResponseEntity<PasswordList> generateDefaultPw() {
       PasswordList passwordList = new PasswordList();
       for ( int i = 0; i < 10; i++ ) {
