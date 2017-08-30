@@ -1,6 +1,7 @@
 package com.github.pixelstuermer.password4me.controllers;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,10 +20,22 @@ public class PwGenDefaultController {
 
    @RequestMapping( method = RequestMethod.GET, value = "/" )
    @ApiOperation( value = "Returns 10 default passwords, each with with 12 characters length" )
-   public ResponseEntity<PasswordList> generatePwTwenty() {
+   public ResponseEntity<PasswordList> generateDefaultPw() {
       PasswordList passwordList = new PasswordList();
       for ( int i = 0; i < 10; i++ ) {
          Password password = PasswordGenerator.generatePassword( 12, true, true, true, true );
+         passwordList.getPasswords().add( password );
+      }
+      return ResponseEntity.status( 200 ).body( passwordList );
+   }
+
+   @RequestMapping( method = RequestMethod.GET, value = "/{length}" )
+   @ApiOperation( value = "Returns 10 default passwords, each with a user-defined length" )
+   public ResponseEntity<PasswordList> generateDefaultPwWithLength(
+      @PathVariable( value = "length", required = true ) int length ) {
+      PasswordList passwordList = new PasswordList();
+      for ( int i = 0; i < 10; i++ ) {
+         Password password = PasswordGenerator.generatePassword( length, true, true, true, true );
          passwordList.getPasswords().add( password );
       }
       return ResponseEntity.status( 200 ).body( passwordList );
