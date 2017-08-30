@@ -18,15 +18,16 @@ import io.swagger.annotations.ApiOperation;
 @Api( "Controller to generate default passwords without parameters" )
 public class PwGenDefaultController {
 
+   @RequestMapping( method = RequestMethod.GET, value = "/" )
+   @ApiOperation( value = "Returns 10 default passwords, each with 12 characters length" )
+   public ResponseEntity<PasswordList> generateDefaultPwIndex() {
+      return generateDefaultPw();
+   }
+
    @RequestMapping( method = RequestMethod.GET, value = "/default" )
    @ApiOperation( value = "Returns 10 default passwords, each with 12 characters length" )
    public ResponseEntity<PasswordList> generateDefaultPw() {
-      PasswordList passwordList = new PasswordList();
-      for ( int i = 0; i < 10; i++ ) {
-         Password password = PasswordGenerator.generatePassword( 12, true, true, true, true );
-         passwordList.getPasswords().add( password );
-      }
-      return ResponseEntity.status( 200 ).body( passwordList );
+      return generateDefaultPwWithLength( 12 );
    }
 
    @RequestMapping( method = RequestMethod.GET, value = "/default/{length}" )
