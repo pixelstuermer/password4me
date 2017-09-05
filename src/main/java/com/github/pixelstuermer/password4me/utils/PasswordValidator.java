@@ -6,11 +6,11 @@ public final class PasswordValidator {
 
    public static ValidationInfo validatePassword( String password ) {
       ValidationInfo validationInfo = new ValidationInfo();
+      validationInfo.setLength( password.length() );
       validationInfo.setHasSmallChars( checkForSmallChars( password ) );
       validationInfo.setHasCapsChars( checkForCapsChars( password ) );
       validationInfo.setHasNumberChars( checkForNumberChars( password ) );
       validationInfo.setHasSpecialChars( checkForSpecialChars( password ) );
-      validationInfo.setLength( password.length() );
       return validationInfo;
    }
 

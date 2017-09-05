@@ -19,7 +19,7 @@ public final class CharacterUtils {
       char[] charArraySmall = "abcdefghijklmnopqrstuvwxyz".toCharArray();
       char[] charArrayCaps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
       char[] charArrayNumbers = "0123456789".toCharArray();
-      char[] charArraySpecial = "!#$%&()*+,-.:;<>=?[]_{}|".toCharArray();
+      char[] charArraySpecial = "!#$%&()*+,-:;<>=?[]_{}|".toCharArray();
 
       for ( char character : charArraySmall ) {
          SMALL_CHARS.add( character );
