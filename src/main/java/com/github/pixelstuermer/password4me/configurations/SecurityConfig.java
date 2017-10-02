@@ -1,6 +1,7 @@
 package com.github.pixelstuermer.password4me.configurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -13,9 +14,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableGlobalMethodSecurity( prePostEnabled = true )
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+   @Value( "${admin.password}" )
+   private String adminPassword;
+
    @Autowired
    public void configureGlobalSecurity( AuthenticationManagerBuilder auth ) throws Exception {
-      auth.inMemoryAuthentication().withUser( "admin" ).password( "p455w0rd" ).roles( "ADMIN" );
+      auth.inMemoryAuthentication().withUser( "admin" ).password( adminPassword ).roles( "ADMIN" );
    }
 
    @Override
