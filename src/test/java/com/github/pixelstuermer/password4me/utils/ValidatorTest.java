@@ -12,7 +12,7 @@ import com.github.pixelstuermer.password4me.models.ValidationInfo;
 public class ValidatorTest {
 
    @Test
-   public void validateSmallCharsPassword() {
+   public void validateSmallCharsPasswordTest() {
       // mock data
       String pw = "laiuoopwmvhuwerjsdfosjf";
       ValidationInfo validationInfo = PasswordValidator.validatePassword( pw );
@@ -26,7 +26,7 @@ public class ValidatorTest {
    }
 
    @Test
-   public void validateCapsCharsPassword() {
+   public void validateCapsCharsPasswordTest() {
       // mock data
       String pw = "SDFKLSDFIQWEMSDFNSDFWERLYYXAD";
       ValidationInfo validationInfo = PasswordValidator.validatePassword( pw );
@@ -40,7 +40,7 @@ public class ValidatorTest {
    }
 
    @Test
-   public void validateNumberCharsPassword() {
+   public void validateNumberCharsPasswordTest() {
       // mock data
       String pw = "83204932584954739534570234";
       ValidationInfo validationInfo = PasswordValidator.validatePassword( pw );
@@ -54,7 +54,7 @@ public class ValidatorTest {
    }
 
    @Test
-   public void validateSpecialCharsPassword() {
+   public void validateSpecialCharsPasswordTest() {
       // mock data
       String pw = "!#$%)*+,-:(?[]_{}|&;<>=";
       ValidationInfo validationInfo = PasswordValidator.validatePassword( pw );
@@ -68,7 +68,7 @@ public class ValidatorTest {
    }
 
    @Test
-   public void validateAllCharsPassword() {
+   public void validateAllCharsPasswordTest() {
       // mock data
       String pw = "a-ff*96ha3VaZ:}9os63aU<$43$e##";
       ValidationInfo validationInfo = PasswordValidator.validatePassword( pw );

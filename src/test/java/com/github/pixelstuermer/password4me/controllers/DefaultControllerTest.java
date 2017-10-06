@@ -1,4 +1,4 @@
-package com.github.pixelstuermer.password4me.utils;
+package com.github.pixelstuermer.password4me.controllers;
 
 import static org.junit.Assert.assertTrue;
 
@@ -13,7 +13,7 @@ import com.github.pixelstuermer.password4me.controllers.PwGenDefaultController;
 import com.github.pixelstuermer.password4me.models.Password;
 import com.github.pixelstuermer.password4me.models.PasswordList;
 
-public class VarietyTest {
+public class DefaultControllerTest {
 
    @Test
    public void test() {
