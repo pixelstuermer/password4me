@@ -20,3 +20,8 @@ Using the parameterized API endpoints, the following parameters can be passed:
     numberChars (boolean)
     specialChars (boolean)
     length (int)
+
+## Configuration
+The following config variables can be passed when launching the application, for example like this:
+
+    admin.password=p455w0rd
