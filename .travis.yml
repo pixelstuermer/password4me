@@ -18,6 +18,7 @@ deploy:
       master: $HEROKU_API_KEY
   - provider: releases
     api_key: $GITHUB_OAUTH_TOKEN
+    file_glob: true
     file:
     - target/*.jar
     - target/LICENSE
