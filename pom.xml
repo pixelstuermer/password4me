@@ -74,10 +74,20 @@
 	</dependencies>
 
 	<build>
+		<finalName>pw4me-${project.version}</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>${project.basedir}</directory>
+				<filtering>false</filtering>
+				<targetPath>${project.build.directory}</targetPath>
+				<includes>
+					<include>README.md</include>
+					<include>LICENSE</include>
+				</includes>
 			</resource>
 		</resources>
 		<plugins>
