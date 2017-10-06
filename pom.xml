@@ -10,7 +10,7 @@
 
 	<groupId>com.github.pixelstuermer</groupId>
 	<artifactId>password4me</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>jar</packaging>
 
 	<name>password4me</name>
