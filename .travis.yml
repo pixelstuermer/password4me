@@ -18,6 +18,10 @@ deploy:
       master: $HEROKU_API_KEY
   - provider: releases
     api_key: $GITHUB_OAUTH_TOKEN
+    file:
+    - target/*.jar
+    - target/LICENSE
+    - target/README.md
     skip_cleanup: true
     on:
       tags: true
