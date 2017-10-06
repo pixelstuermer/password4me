@@ -3,7 +3,7 @@ branches:
   only:
     - master
     - develop
-    - \d+\.\d+\.\d+
+    - /\d+\.\d+\.\d+/
 
 script: "mvn cobertura:cobertura"
 after_success:
