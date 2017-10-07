@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/pixelstuermer/password4me.svg?branch=master)](https://travis-ci.org/pixelstuermer/password4me)
+[![codebeat badge](https://codebeat.co/badges/c1a0fa77-f298-4c43-b8b7-35b2009fc70d)](https://codebeat.co/projects/github-com-pixelstuermer-password4me-master)
 [![codecov](https://codecov.io/gh/pixelstuermer/password4me/branch/master/graph/badge.svg)](https://codecov.io/gh/pixelstuermer/password4me)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub release](https://img.shields.io/github/release/pixelstuermer/password4me.svg)]()
