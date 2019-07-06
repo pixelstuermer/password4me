@@ -11,12 +11,6 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 
 deploy:
-  - provider: heroku
-    on: master
-    app:
-      master: $HEROKU_APP_NAME
-    api_key:
-      master: $HEROKU_API_KEY
   - provider: releases
     api_key: $GITHUB_OAUTH_TOKEN
     file_glob: true
